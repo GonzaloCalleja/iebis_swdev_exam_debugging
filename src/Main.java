@@ -5,20 +5,32 @@ public class Main {
 
     public static void main(String[] args) {
         String emailAddress = "john.doe.mis2016@ie.edu";
-        String formattedEmailAddress = emailAddress.replaceAll(".", "/");
+        // Change 1 regex from "." to "\\.", as instructed by teacher, to match only the . character instead of any character
+        String formattedEmailAddress = emailAddress.replaceAll("\\.", "/");
 
         Random random = new Random();
-        StringBuffer word = null;
+        // Change 2 initializing word instead of declaring it null.
+        // initializing word outside the switch statement as an empty StringBuffer, and then appending the pertinent
+        // character in the switch statement
+        StringBuffer word = new StringBuffer();
 
-        switch (random.nextInt(2)) {
+        // Change 3 random bound from 2 to 3, since the nextInt() method returns a random int that goes from 0 to a number
+        // smaller than the bound given. Therefore, bound 2 returns either 0 or 1, and bound 3 returns either 0, 1 or 2
+        // which will give the equiprobability for each choice.
+        switch (random.nextInt(3)) {
             case 0:
-                word = new StringBuffer('Y');
+                word.append('Y');
+                break;
             case 1:
-                word = new StringBuffer('F');
+                word.append('F');
+                break;
             case 2:
-                word = new StringBuffer('T');
+                word.append('T');
+                break;
         }
-
+        // Change 4 adding break statements at the end of all the cases in the switch
+        // this is neccessary because otherwise, when a case is detected all the following cases are also executed.
+        
         word.append('o');
         word.append('u');
         word.append('r');
