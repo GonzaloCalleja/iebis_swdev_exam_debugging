@@ -56,24 +56,24 @@ Scoring criteria:
 ## Bugs fixed:
 1. **regex expresion:**  
 Regex from "." to "\\.", as instructed by teacher, to match only the . character instead of any character.
-'''java
+```java
 String formattedEmailAddress = emailAddress.replaceAll("\\.", "/");
-'''
+```
 2. **StringBuffer initializing:**  
 Initializing word outside the switch statement as an empty StringBuffer, and then appending the pertinent character in the switch statement. This works correctly, because otherwise, giving the StringBuffer constructor a char as an argument was not working as intended.
-'''java
+```java
 StringBuffer word = new StringBuffer();
-'''
+```
 3. **random.nextInt() bound:**  
 Random bound from 2 to 3, since the nextInt() method returns a random int that goes from 0 to a number smaller than the bound given. Therefore, bound 2 returns either 0 or 1, and bound 3 returns either 0, 1 or 2 which will give the equiprobability for each choice.
-'''java
+```java
 switch (random.nextInt(3)) {
       // some code
 }
-'''
+```
 4. **breaks in switch statement:**  
 adding break statements at the end of all the cases in the switch this is neccessary because otherwise, when a case is detected all the following cases are also executed.
-'''java
+```java
 switch (random.nextInt(3)) {
             case 0:
                 word.append('Y');
@@ -85,5 +85,5 @@ switch (random.nextInt(3)) {
                 word.append('T');
                 break;
         }
-'''
+```
 
